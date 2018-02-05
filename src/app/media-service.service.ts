@@ -52,4 +52,14 @@ export class MediaServiceService {
       settings);
   }
 
+  getUploadData(formData) {
+    const settings = {
+      headers: new HttpHeaders().set('x-access-token',
+        localStorage.getItem('token')),
+    };
+
+    return this.http.post('http://media.mw.metropolia.fi/wbma/media', formData,
+      settings);
+  }
+
 }
