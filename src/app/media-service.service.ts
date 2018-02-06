@@ -62,4 +62,8 @@ export class MediaServiceService {
       settings);
   }
 
+  getNewFiles() {
+    return this.http.get('http://media.mw.metropolia.fi/wbma/media?start=10&limit=10');
+  }
+
 }
