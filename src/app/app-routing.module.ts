@@ -5,6 +5,7 @@ import {RegisterComponent} from './register/register.component';
 import {LogoutComponent} from './logout/logout.component';
 import {FrontComponent} from './front/front.component';
 import {UploadComponent} from './upload/upload.component';
+import {ViewfileComponent} from './viewfile/viewfile.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'upload',
     component: UploadComponent
+  },
+  {
+    path: 'viewfile',
+    component: ViewfileComponent
   }
 ];
 

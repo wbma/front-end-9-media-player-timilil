@@ -66,4 +66,28 @@ export class MediaServiceService {
     return this.http.get('http://media.mw.metropolia.fi/wbma/media?start=10&limit=10');
   }
 
+  getFile() {
+    return this.http.get('http://media.mw.metropolia.fi/wbma/media?start=0&limit=1');
+  }
+
+  getUserByID (id) {
+    const settings = {
+      headers: new HttpHeaders().set('x-access-token',
+        localStorage.getItem('token')),
+    };
+    return this.http.get('http://media.mw.metropolia.fi/wbma/users/' + id, settings);
+  }
+
+  getLikes(id) {
+    return this.http.get('http://media.mw.metropolia.fi/wbma/favourites/file/' + id);
+  }
+
+  liked(){
+    const settings = {
+        headers: new HttpHeaders().set('x-access-token',
+        localStorage.getItem('token')),
+    };
+    return this.http.get('http://media.mw.metropolia.fi/wbma/favorites', settings);
+  }
+
 }
